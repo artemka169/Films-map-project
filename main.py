@@ -26,7 +26,8 @@ def map_write(latitude_0, longitude_0, all_info):
     """
     :param latitude_0: latitude coordinate of start position on map
     :param longitude_0: longitude coordinate of start position on map
-    :param all_info:
+    :param all_info: tuple with all info:
+    (latitude, longitude, info about film, distance to start coordinates)
     """
     cur_map = folium.Map(location=(latitude_0, longitude_0), zoom_start=5)
     fg = folium.FeatureGroup(name='Closest 10')
@@ -49,7 +50,7 @@ def map_write(latitude_0, longitude_0, all_info):
         for i in range(20, 30):
             fg2.add_child(folium.Marker(location=(all_info[i][0], all_info[i][1]), popup=all_info[i][2],
                                         icon=folium.Icon(color='darkpurple', icon='off')))
-    for i in range(20, len(all_info)):
+    for i in range(30, len(all_info)):
         fg3.add_child(folium.Marker(location=(all_info[i][0], all_info[i][1]), popup=all_info[i][2],
                                     icon=folium.Icon(color='pink', icon='none')))
 
