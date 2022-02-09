@@ -8,4 +8,8 @@ Input from argparse : year, latitude, longitude.
 
 To analise database, you shold change direction of file in the first line of main body of program.
 
+There is a limit in 30.000 lines in database, because more info causes browser crash, when you try to open the map.
+![image](https://user-images.githubusercontent.com/93625455/153249476-667b4187-78a9-4fda-bec7-0758ec008b2b.png)
+This map consists of 25.088 labels, but browser can't open it properly :( 
+
 Program uses geopy, argparse, haversine, and folium libraries.
